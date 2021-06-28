@@ -6,10 +6,13 @@ if ! command -v rg &> /dev/null; then
   sudo apt-get install -y ripgrep
 fi
 
-if ! command -v bat &> /dev/null; then
-  sudo apt-get install -y bat
-fi
-
 if [ $SPIN ]; then
-  ln -s ./.irbc ~/.irbc
+  # Hook up irbc
+  ln -s ./dotfiles/.irbc ~/.irbc
+
+  # Install oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  # Set agnoster as the theme
+  sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="agnoster"/' ~/.zshrc
 fi
