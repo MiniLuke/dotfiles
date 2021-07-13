@@ -15,4 +15,7 @@ if [ $SPIN ]; then
 
   # Set agnoster as the theme
   sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="agnoster"/' ~/.zshrc
+
+  # Change git branch less behavior
+  git config --global pager.branch false
 fi
