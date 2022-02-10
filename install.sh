@@ -18,4 +18,7 @@ if [ $SPIN ]; then
 
   # Change git branch less behavior
   git config --global pager.branch false
+
+  # Aliases
+  alias workerlogs='journalctl --unit proc-shopify--shopify@worker.service --follow'
 fi
