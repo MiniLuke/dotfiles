@@ -1,3 +1,5 @@
+git config --global commit.gpgsign true
+
 if ! command -v pry &> /dev/null; then
   gem install pry
 fi
