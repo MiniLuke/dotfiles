@@ -8,12 +8,12 @@ fi
 
 if [ $SPIN ]; then
   # Hook up irbc
-  ln -s ./dotfiles/irbc.config ~/.irbc
+  ln -s ~/dotfiles/irbc.config ~/.irbc
 
   # Hook up zshrc
-  ln -s ./dotfiles/zshrc.config ~/.zshrc
+  cat ~/dotfiles/zshrc.config > ~/.zshrc
 
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s -- --force
   mkdir -p ~/.config
-  ln -s ./dotfiles/starship.toml ~/.config/starship.toml
+  ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 fi
