@@ -13,7 +13,7 @@ if [ $SPIN ]; then
   # Hook up zshrc
   cat ~/dotfiles/zshrc.config >> ~/.zshrc
 
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s -- --force
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s --force
   mkdir -p ~/.config
   ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 fi
