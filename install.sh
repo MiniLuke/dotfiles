@@ -1,5 +1,3 @@
-git config --global commit.gpgsign true
-
 if ! command -v pry &> /dev/null; then
   gem install pry
 fi
@@ -10,17 +8,12 @@ fi
 
 if [ $SPIN ]; then
   # Hook up irbc
-  ln -s ./dotfiles/.irbc ~/.irbc
+  ln -s ./dotfiles/irbc.config ~/.irbc
 
-  # Install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # Hook up zshrc
+  ln -s ./dotfiles/zshrc.config ~/.zshrc
 
-  # Set agnoster as the theme
-  sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="agnoster"/' ~/.zshrc
-
-  # Change git branch less behavior
-  git config --global pager.branch false
-
-  # Aliases
-  alias workerlogs='journalctl --unit proc-shopify--shopify@worker.service --follow'
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  mkdir -p ~/.config
+  ln -s ./dotfiles/starship.toml ~/.config/starship.toml
 fi
