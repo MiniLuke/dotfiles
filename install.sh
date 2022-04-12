@@ -11,7 +11,7 @@ if [ $SPIN ]; then
   ln -s ~/dotfiles/irbc.config ~/.irbc
 
   # Hook up zshrc
-  cat ~/dotfiles/zshrc.config > ~/.zshrc
+  cat ~/dotfiles/zshrc.config >> ~/.zshrc
 
   sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s -- --force
   mkdir -p ~/.config
