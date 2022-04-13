@@ -1,10 +1,12 @@
 format = """
+$line_break\
 $directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
+$cmd_duration\
 $time\
 $line_break\
 $character"""
@@ -14,7 +16,8 @@ add_newline = true
 
 [directory]
 style="fg:81"
-truncation_symbol=".../"
+truncation_length=5
+truncation_symbol="…/"
 
 [character]
 success_symbol = "[➜](bold fg:39)"
@@ -24,6 +27,12 @@ error_symbol = "[✖](bold red)"
 style="bold fg:172"
 
 [time]
-format="[$time]($style)"
+format="[$time]($style) "
 style="bold fg:8"
 disabled=false
+
+[cmd_duration]
+min_time=2_000
+show_milliseconds=true
+format='[\[$duration\]]($style) '
+style="bold fg:161"
