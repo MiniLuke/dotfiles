@@ -15,5 +15,5 @@ if [ $SPIN ]; then
 
   sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s --force
   mkdir -p ~/.config
-  ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+  ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 fi
