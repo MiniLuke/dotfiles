@@ -16,4 +16,7 @@ if [ $SPIN ]; then
   sh -c "$(curl -fsSL https://starship.rs/install.sh)" -s --force
   mkdir -p ~/.config
   ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
+
+  # Any git configs we want
+  git config --global push.autoSetupRemote true
 fi
